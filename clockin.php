@@ -1,4 +1,4 @@
 <?php
 $date = date('d-m-y h:i:s');
-echo $date;
+echo ("You have clocked in on $date");
 ?>

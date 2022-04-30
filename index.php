@@ -23,8 +23,11 @@
         echo ("</br>");  
         echo ("</br>");  
 
-        echo("<button type='submit'>Clock In</button>");
-        echo("<button type='submit'>Clock Out</button>");
+        echo("<a href='clockin.php'> Clock In</a>") ; 
+        echo("<a href='clockout.php'> Clock Out</a>") ; 
+        echo("<a href='addnew.php'> Add New Employee</a>");
+        echo("<a href='remove.php'> Remove Employee</a>");
+
 
 
      echo("</form>");
