@@ -1,2 +1,1 @@
-# portfolio2
- 
+I decided to create an employee clock in/clock out system
