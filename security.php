@@ -25,8 +25,7 @@
         // We want to make sure we don't add
         //  duplicate values.
         if(!database_verifyUser($result["firstname"], $result["lastname"])) {
-            // Username does not exist.
-            // Add a new one.
+            // Add a new employee.
             database_addEmployee($result["firstname"], $result["lastname"]);
         }
         
@@ -45,7 +44,6 @@
     }
 
     function security_sanitize() {
-        // Create an array of keys username and password
         $result = [
             "firstname" => null,
             "lastname" => null

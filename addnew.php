@@ -1,5 +1,5 @@
 <?php
-    include('security.php')
+    include('security.php');
 ?>
 
 
@@ -11,7 +11,9 @@
 
     <?php
     if(security_validate()) {
-        echo("<a href='index.php'>Home</a>");
+    echo("New employee added to the system!");   
+    echo ("</br>");    
+    echo("<a href='index.php'>Home</a>");
     }
     else {
         echo("<form action='addnew.php' method='POST'>");

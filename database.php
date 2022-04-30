@@ -8,14 +8,13 @@
 
         // Server
         $server = "localhost";
-        // firstname
-        $firstname = "";
-        $lastname = "";
+        $username = "root";
+        $password = "";
         // Database
         $database = "portfolio";
 
         if($connection == null) {
-            $connection = mysqli_connect($server, $firstname, $lastname, $database);
+            $connection = mysqli_connect($server, $username, $password, $database);
         }
     }
 
@@ -24,21 +23,20 @@
         global $connection;
 
         if($connection != null) {
-            // Insert username and hashed password
             mysqli_query($connection, "INSERT INTO employees (firstname, lastname) VALUES ('{$firstname}', '{$lastname}');");
         }
     }
 
-    function database_deleteEmployee($username, $password) {
+    function database_deleteEmployee($firstname, $lastname) {
         global $connection;
 
-        if($status) {
+        if($connection != null) {
             mysqli_query($connection, "DELETE FROM employees WHERE firstname = '{$firstname}'");
 
         }
     }
     
-    function database_verifyUser($username, $password) {
+    function database_verifyUser($firstname, $lastname) {
         // Use the global connection
         global $connection;
 
@@ -46,8 +44,7 @@
         $status = false;
 
         if($connection != null) {
-            // Use WHERE expressions to look for username
-            $results = mysqli_query($connection, "SELECT password FROM employees WHERE firstname = '{$firstname}';");
+            $results = mysqli_query($connection, "SELECT lastname FROM employees WHERE firstname = '{$firstname}';");
             
             // mysqli_fetch_assoc() returns either null or row data
             $row = mysqli_fetch_assoc($results);
